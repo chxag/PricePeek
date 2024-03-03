@@ -2,7 +2,7 @@ import sqlite3
 
 class DatabaseHandler:
     def __init__(self, table_name):
-        self.table_name = table_name
+        self.table_name = table_name.replace(' ', '_')
         self.conn = sqlite3.connect('grocery_prices_dynamic.db')
         self.c = self.conn.cursor()
         self.c.execute(f'''CREATE TABLE IF NOT EXISTS {self.table_name}
