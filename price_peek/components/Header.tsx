@@ -3,8 +3,12 @@ import SearchToastie from '@/public/search_icon.png'
 import Icon from '@/public/user.png'
 import Image from 'next/image'
 
+interface SearchFormProps {
+  searchString: string;
+  handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-const Header = () => {
+const Header: React.FC<SearchFormProps> = ({ searchString, handleSearchChange}) => {
   return (
     <header className="flex items-center justify-between px-6 py-4">
     {/* Logo */}
@@ -17,6 +21,8 @@ const Header = () => {
       <input
         type="text"
         placeholder="Search"
+        value={searchString}
+        onChange={handleSearchChange}
         className="flex-grow px-0 py-2 border-b-2 border-red-100 bg-off_white-100 focus:outline-none font-bold placeholder-cream-100 text-brown-100"
       />
       <Image
