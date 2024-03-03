@@ -19,7 +19,7 @@
 @font-face {
   font-family: "SNPro";
   src: url('../fonts/SNPro-Black.otf') format('opentype');
-  font-weight: bolds;
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -168,9 +168,9 @@ body {
   }
 
   /* Hero */
-  /* .hero-map {
+  .hero-map {
     @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
-  } */
+  }
 
   /* Camp */
   .camp-quote {
@@ -199,9 +199,11 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-.get-app {
-  width: 1310px;
-  height: 597px;
+.get-block {
+  width: 800px;
+  height: 264px;
   background-color: #582000;
   border-radius: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
 }

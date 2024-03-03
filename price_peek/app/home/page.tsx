@@ -1,29 +1,33 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react';
 import Header from '@/components/Header'
-//comment
-const HomePage = () => {
-  return (
-    <>
-        <div className="h-screen bg-off_white-100">
-            <Header />
-        </div>
+import Block from '@/components/Block'
+import ToggleButton from '@/components/ToggleButton'
+import MapView from '@/components/MapView';
 
-    </>
-  )
+const HomePage = () => {
+    const [showMap, setShowMap] = useState(false);
+
+    const toggleMap = () => {
+      setShowMap(!showMap);
+    };
+    return (
+        <>
+          <div className="flex flex-col h-screen bg-off_white-100">
+            <Header />
+            <ToggleButton onToggle={toggleMap} />
+            
+            {showMap ? (
+                <div className='mt-12 flex items-center mx-8 rounded-custom'>
+                    <MapView />
+                </div>
+            ) : (
+              // <div className="flex items-center justify-center ml-0 -mt_5">
+              <Block type={'button'} product_name={'Croissant'} brandname={"Sainsbury's"} price={'£3.60'} link_to={'/'} />
+            )}
+          </div>
+        </>
+      );
 }
 
 export default HomePage
-
-/**
- * version: 1
- * frontend:
-  phases:
-    # IMPORTANT - Please verify your build commands
-    build:
-      commands: []
-  artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: .next
-    files:
-      cache:
-      paths: [] */ 

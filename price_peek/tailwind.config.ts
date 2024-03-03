@@ -23,6 +23,9 @@ module.exports = {
         grey: {
           100: '#CDCDCD',
         },
+        cream: {
+          100: '#D0BEA2',
+        },
       },
       screens: {
         xs: '400px',
